@@ -14,8 +14,14 @@ public class Persona {
     }
 
     public String toString() {
-        // TODO: Explicar porque la concatenación desperdicia la memoria
-        return "Persona: " + nombre + " " + apellidos + " " + genero + " con " + edad + " años.";
+        // Se desperdicia memoria porque aquí se crean 17 cadenas de texto
+        // return "Persona: " + nombre + " " + apellidos + " " + genero + " con " + edad + " años.";
+
+        // Ocupando cadenas con formato se crean 4 cadenas
+        String cadena = "Persona: %s %s %s con %d años.";
+        return cadena.formatted(nombre, apellidos, genero, edad);
+
+        // Ensamblar cadenas con las clase StringBuilder o StringBuffer
     }
 
 }
